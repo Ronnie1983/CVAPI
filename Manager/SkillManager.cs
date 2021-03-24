@@ -10,6 +10,16 @@ namespace CVAPI.Manager
     {
         public static List<Skill> Skills = new List<Skill>();
 
+        public SkillManager()
+        {
+            var testSkill = new Skill(1, "Advanced C#");
+            var testSkill2 = new Skill(2, "MSSQL");
+            var testSkill3 = new Skill(3, "Agile Development (SCRUM, XP)");
+            Post(testSkill);
+            Post(testSkill2);
+            Post(testSkill3);
+        }
+
         public List<Skill> GetAll()
         {
             return Skills;
@@ -25,7 +35,7 @@ namespace CVAPI.Manager
 
         private int AutoGenerateId()
         {
-            return Skills.Count > 0 ? Skills.Max(x => x.Id) : 1;
+            return Skills.Count > 0 ? Skills.Max(x => x.Id) + 1 : 1;
         }
     }
 }
