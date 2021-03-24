@@ -14,13 +14,13 @@ namespace CVAPI.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private CategoryManager manager = new CategoryManager();
+        private readonly CategoryManager _manager = new CategoryManager();
 
         // GET: api/<CategoryController>
         [HttpGet]
         public IEnumerable<Category> Get()
         {
-            return manager.GetAll();
+            return _manager.GetAll();
         }
 
         // GET api/<CategoryController>/5

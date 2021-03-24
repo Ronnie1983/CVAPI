@@ -14,38 +14,38 @@ namespace CVAPI.Controllers
     [ApiController]
     public class PersonalController : ControllerBase
     {
-        private PersonalManager manager = new PersonalManager();
+        private readonly PersonalManager _manager = new PersonalManager();
 
         // GET: api/<PersonalController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //[HttpGet]
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
         // GET api/<PersonalController>/5
         [HttpGet("{id}")]
         public UserInfo Get(int id)
         {
-            return manager.GetUserById(id);
+            return _manager.GetUserById(id);
         }
 
         // POST api/<PersonalController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        //[HttpPost]
+        //public void Post([FromBody] string value)
+        //{
+        //}
 
-        // PUT api/<PersonalController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        //// PUT api/<PersonalController>/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] string value)
+        //{
+        //}
 
-        // DELETE api/<PersonalController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<PersonalController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

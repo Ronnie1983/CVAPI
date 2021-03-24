@@ -15,45 +15,48 @@ namespace CVAPI.Controllers
     [ApiController]
     public class CVItemsController : ControllerBase
     {
-        private CVItemManager manager = new CVItemManager();
+        private readonly CVItemManager _manager = new CVItemManager();
 
         // GET: api/<CVItemsController>
         [HttpGet]
         public List<CVItem> Get()
         {
-            return manager.GetAll();
+            return _manager.GetAll();
         }
 
         // GET api/<CVItemsController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            throw new NotImplementedException();
         }
 
         // POST api/<CVItemsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] CVItem item)
         {
+            _manager.Post(item);
         }
 
         // PUT api/<CVItemsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] CVItem item)
         {
+            throw new NotImplementedException();
         }
 
         // DELETE api/<CVItemsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _manager.Delete(id);
         }
 
         [HttpGet]
         [Route("cat/{categoryName}")]
         public List<CVItem>GetByCat(string categoryName)
         {
-            return manager.GetByCategory(categoryName);
+            return _manager.GetByCategory(categoryName);
         }
     }
 }
