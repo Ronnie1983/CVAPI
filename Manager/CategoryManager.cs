@@ -11,7 +11,7 @@ namespace CVAPI.Manager
         {
             categories = new List<Category>()
             {
-                new Category(1, "Work Experiance"),
+                new Category(1, "WorkItem"),
                 new Category(2, "Education")
             };
         }
