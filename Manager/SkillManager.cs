@@ -8,17 +8,12 @@ namespace CVAPI.Manager
 {
     public class SkillManager
     {
-        public static List<Skill> Skills = new List<Skill>();
-
-        public SkillManager()
+        private static readonly List<Skill> Skills = new List<Skill>
         {
-            var testSkill = new Skill(1, "Advanced C#");
-            var testSkill2 = new Skill(2, "MSSQL");
-            var testSkill3 = new Skill(3, "Agile Development (SCRUM, XP)");
-            Post(testSkill);
-            Post(testSkill2);
-            Post(testSkill3);
-        }
+            new Skill(1, "Advanced C#"),
+            new Skill(2, "MSSQL"),
+            new Skill(3, "Agile Development (SCRUM, XP)")
+        };
 
         public List<Skill> GetAll()
         {
