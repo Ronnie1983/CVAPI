@@ -36,6 +36,8 @@ namespace CVAPI.Models
             _dateFrom = dateFrom;
             _dateTo = dateTo;
             _category = category;
+            DateFromString = _dateFrom.ToString("Y");
+            DateToString = _dateTo.ToString("Y");
         }
 
         public int Id
@@ -79,5 +81,8 @@ namespace CVAPI.Models
             get => _category;
             set => _category = value;
         }
+
+        public string DateFromString { get; set; }
+        public string DateToString { get; set; }
     }
 }
