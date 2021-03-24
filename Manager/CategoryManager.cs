@@ -5,21 +5,15 @@ namespace CVAPI.Manager
 {
     public class CategoryManager
     {
-        private List<Category> categories;
-
-        public CategoryManager()
+        private static readonly  List<Category> Categories = new List<Category>()
         {
-            categories = new List<Category>()
-            {
-                new Category(1, "WorkItem"),
-                new Category(2, "Education")
-            };
-        }
-
+            new Category(1, "WorkItem"),
+            new Category(2, "Education")
+        };
 
         public List<Category> GetAll()
         {
-            return categories;
+            return Categories;
         }
     }
 }
